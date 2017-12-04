@@ -15,18 +15,22 @@ import requests,tempfile
 
 cl = LINETCR.LINE()
 cl.login(qr=True)
+#cl.login(token=
 cl.loginResult()
 
 ki = LINETCR.LINE()
 ki.login(qr=True)
+#ki.login(token=
 ki.loginResult()
 
 kk = LINETCR.LINE()
 kk.login(qr=True)
+#kk.login(token=
 kk.loginResult()
 
 kc = LINETCR.LINE()
 kc.login(qr=True)
+#kc.login(token=
 kc.loginResult()
 
 cl
@@ -35,7 +39,7 @@ print "login success"
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
-helpMessage =""" - Ard Squad bot -
+helpMessage =""" - TEAM BOT BONDSKILLERS  -
 
 General command :
 Me  =  Cek akun sendiri
@@ -45,7 +49,7 @@ Bot?  =  Cek akun Bot
 Ginfo  =  Group info
 Id Group = Melihat id grup
 Group pict  =  Melihat pict grup
-Speedbot  =  Cek kecepatan bot
+Speed/Sp  =  Cek kecepatan bot
 Up  =  Fungsi spam chat
 Tagall  =  Mention semua user
 Cek  =  Membuat set point
@@ -54,7 +58,7 @@ Apakah ...  =  Menanyakan jawaban ya atau tidak
 Creator  =  Melihat kontak pembuat bot
 
 private command :
-Set group = Melihat private menu"""
+SetBot = Melihat private menu"""
 
 Setgroup =""" Private Menu 􀔃􀄆red check mark􏿿
 
@@ -68,8 +72,8 @@ Setgroup =""" Private Menu 􀔃􀄆red check mark􏿿
 -- Joinn on/off
 
 􀔃􀅕red arrow right􏿿 Command Private
-[Set View] = Melihat proteksi bot
-[Get ready] = Cek respon bot
+[Set] = Melihat proteksi bot
+[Respon/absen] = Cek respon bot
 [Gn namagroup] = Ganti nama grup
 [Open url] = Membuka url grup
 [Gurl] = Membuka dan mengirim url grup
@@ -90,22 +94,26 @@ Setgroup =""" Private Menu 􀔃􀄆red check mark􏿿
 [Invite mid] = Invite via mid
 [inv: (gid)] = Invite admin ke group id yang dituju
 [Kick mid] = Kick via mid
-[Ard Squad join] = Invite semua bot
-[Bye bots] = Mengeluarkan semua bots assist
-[Bye Ard] = Mengeluarkan bot utama
-[Ard out] = Mengeluarkan bot utama dari semua grup
+[Join/masuk] = Invite semua bot
+[Bye bots/pulang] = Mengeluarkan semua bots assist
+[Bye bot] = Mengeluarkan bot utama
+[all bye] = Mengeluarkan bot utama dari semua grup
 [Bc ...] = Untuk broadcast ke semua grup
 [Kernel] = Melihat kernel bot"""
 KAC=[cl,ki,kk,kc]
 DEF=[ki,kk,kc]
-mid = cl.getProfile().mid
-Amid = ki.getProfile().mid
-Bmid = kk.getProfile().mid
-Cmid = kc.getProfile().mid
+mid = cl.getProfile().mid 
+["u84515457185ad477624f33a05d278146"]
+Amid = ki.getProfile().mid 
+["u4e96328e80256e7cb11facb68fc362fb"]
+Bmid = kk.getProfile().mid 
+["uc5f7887e9cb38d9e5412fbc0888dcfe1"]
+Cmid = kc.getProfile().mid 
+["ud836c089588804a00b5a46538d4f7e83"]
 
-Bots=[mid,Amid,Bmid,Cmid,"YOUR_MID"]
-admin=["YOUR_MID"]
-admsa=["YOUR_MID"]
+Bots=[mid,Amid,Bmid,Cmid,"u84515457185ad477624f33a05d278146","u4e96328e80256e7cb11facb68fc362fb","uc5f7887e9cb38d9e5412fbc0888dcfe1","ud836c089588804a00b5a46538d4f7e83"]
+admin=["u84515457185ad477624f33a05d278146"]
+admsa=["u84515457185ad477624f33a05d278146","u4e96328e80256e7cb11facb68fc362fb","uc5f7887e9cb38d9e5412fbc0888dcfe1","ud836c089588804a00b5a46538d4f7e83"]
 wait = {
     'contact':False,
     'autoJoin':True,
@@ -113,7 +121,7 @@ wait = {
     'leaveRoom':True,
     'timeline':False,
     'autoAdd':True,
-    'message':"Thanks for adding me\nFollow my instagram; instagram.com/fajrinard",
+    'message':"Thanks for add me",
     "lang":"JP",
     "comment":"Thanks for add me",
     "commentOn":True,
@@ -121,10 +129,10 @@ wait = {
     "wblack":False,
     "dblack":False,
     "clock":False,
-    "cName":"Ard",
-    "cName2":"Ard 1",
-    "cName3":"Ard 2",
-    "cName4":"Ard 3",
+    "cName":"Fauji",
+    "cName2":"Suji 1",
+    "cName3":"Suji 2",
+    "cName4":"Suji 3",
     "blacklist":{},
     "wblacklist":False,
     "dblacklist":False,
@@ -522,11 +530,11 @@ def bot(op):
         if op.type == 24:
             if wait["leaveRoom"] == True:
                 cl.leaveRoom(op.param1)
-        if op.type == 26:
+        if op.type == 25:
             msg = op.message
             if msg.toType == 0:
                 msg.to = msg.from_
-                if msg.from_ == "ue11fc7860247c63bd3da149613a793f6":
+                if msg.from_ == "u84515457185ad477624f33a05d278146":
                     if "join:" in msg.text:
                         list_ = msg.text.split(":")
                         try:
@@ -536,7 +544,7 @@ def bot(op):
                             cl.updateGroup(G)
                         except:
                             cl.sendText(msg.to,"error")
-        if op.type == 26:
+        if op.type == 25:
             msg = op.message
             if msg.toType == 1:
                 if wait["leaveRoom"] == True:
@@ -544,7 +552,7 @@ def bot(op):
             if msg.contentType == 16:
                 url = msg.contentMetadata("line://home/post?userMid="+mid+"&postId="+"new_post")
                 cl.like(url[25:58], url[66:], likeType=1001)
-        if op.type == 26:
+        if op.type == 25:
             msg = op.message
             if msg.contentType == 13:
                if wait["wblack"] == True:
@@ -612,7 +620,7 @@ def bot(op):
                     cl.sendText(msg.to,helpMessage)
                 else:
                     cl.sendText(msg.to,helpt)
-            elif msg.text.lower() == 'set group':
+            elif msg.text.lower() == 'setbot':
 				if msg.from_ in admin:
 					if wait["lang"] == "JP":
 						cl.sendText(msg.to,Setgroup)
@@ -679,8 +687,8 @@ def bot(op):
                 kc.sendMessage(msg)
             elif msg.text in ["Creator","creator"]:
                 msg.contentType = 13
-                cl.sendText(msg.to, "Created By: FajrinArd")
-                msg.contentMetadata = {'mid': 'ue11fc7860247c63bd3da149613a793f6'}
+                cl.sendText(msg.to, "Created By: Fauji Ahmad")
+                msg.contentMetadata = {'mid': 'u84515457185ad477624f33a05d278146'}
                 cl.sendMessage(msg)
             elif msg.text in ["Me"]:
                 msg.contentType = 13
@@ -1028,7 +1036,7 @@ def bot(op):
 							cl.sendText(msg.to,"done")
 						else:
 							cl.sendText(msg.to,"è¦�äº†å…³æ–­ã€‚")
-            elif msg.text in ["Set View"]:
+            elif msg.text in ["Set"]:
 			  if msg.from_ in admin:	
 				md = ""
 				if wait["Protectjoin"] == True: md+="􀔃􀆑lock􏿿  Block Join\n"
@@ -1112,7 +1120,7 @@ def bot(op):
 
 #-----------------------------------------------
          #----------------Fungsi Join Group Start-----------------------#
-            elif msg.text in ["Ard Squad join"]:
+            elif msg.text in ["Join","Masuk"]:
               if msg.from_ in admin:
                         G = cl.getGroup(msg.to)
                         ginfo = cl.getGroup(msg.to)
@@ -1187,7 +1195,7 @@ def bot(op):
     #----------------------Fungsi Join Group Finish---------------#
 
     #-------------Fungsi Leave Group Start---------------#
-            elif msg.text in ["Bye bots"]:
+            elif msg.text in ["Bye bots","Pulang"]:
               if msg.from_ in admin:
                 if msg.toType == 2:
                     ginfo = ki.getGroup(msg.to)
@@ -1208,7 +1216,7 @@ def bot(op):
     #-------------Fungsi Leave Group Finish---------------#
     
     #-------------Fungsi Tag All Start---------------#
-            elif msg.text in ["kiwkiw","Tagall"]:
+            elif msg.text in ["Tag","Tagall"]:
                   group = cl.getGroup(msg.to)
                   nama = [contact.mid for contact in group.members]
 
@@ -1270,7 +1278,7 @@ def bot(op):
                     kk.sendText(msg.to,"makasih semuanya..")
                     kc.sendText(msg.to,"hehehhehe")
                     msg.contentType = 13
-                    msg.contentMetadata = {'mid': 'ue11fc7860247c63bd3da149613a793f6'}
+                    msg.contentMetadata = {'mid': 'u84515457185ad477624f33a05d278146'}
                     cl.sendMessage(msg)
                     targets = []
                     for s in gs.members:
@@ -1428,12 +1436,12 @@ def bot(op):
 
 #-----------------------------------------------
 
-            elif msg.text in ["Ard","ard"]:
+            elif msg.text in ["Suji","uji"]:
                 cl.sendText(msg.to,"Ya? Type 'help' for help message.")
 #-----------------------------------------------
 
        #-------------Fungsi Respon Start---------------------#
-            elif msg.text in ["Get ready"]:
+            elif msg.text in ["Respon","absen"]:
 			  if msg.from_ in admin:
 				cl.sendText(msg.to,"I'm ready")
 				ki.sendText(msg.to,"I'm ready")
@@ -1444,11 +1452,15 @@ def bot(op):
       #-------------Fungsi Balesan Respon Finish---------------------#
 
        #-------------Fungsi Speedbot Start---------------------#
-            elif msg.text in ["Speedbot","speedbot"]:
-                start = time.time()
+            elif msg.text in ["Speed","Sp"]:
+                print("Speed") 
+		start = time.time()
                 cl.sendText(msg.to, "please wait...")
                 elapsed_time = time.time() - start
-                cl.sendText(msg.to, "%ss" % (elapsed_time))
+                cl.sendText(msg.to, "%sseconds" % (elapsed_time))
+                ki.sendText(msg.to, "%sdetik" % (elapsed_time))
+                kk.sendText(msg.to, "%sseconds" % (elapsed_time))   
+                kc.sendText(msg.to, "%sdetik" % (elapsed_time)) 
       #-------------Fungsi Speedbot Finish---------------------#
 
       #-------------Fungsi Banned Send Contact Start------------------#
@@ -1521,7 +1533,7 @@ def bot(op):
                     except:
                         pass
 
-            elif msg.text.lower() == 'ard out all':
+            elif msg.text.lower() == 'all bye':
 			  if msg.from_ in admsa:
 				gid = cl.getGroupIdsJoined()
 				gid = ki.getGroupIdsJoined()
@@ -1732,25 +1744,25 @@ thread2 = threading.Thread(target=nameUpdate)
 thread2.daemon = True
 thread2.start()
 
-def autolike():
-     for zx in range(0,20):
-        hasil = cl.activity(limit=200)
-        if hasil['result']['posts'][zx]['postInfo']['liked'] == False:
-          try:    
-			cl.like(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],likeType=1003)
-			cl.comment(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],"Auto Like by\nline.me/ti/p/~ardfajrin")
-			ki.like(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],likeType=1003)
-			kk.like(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],likeType=1003)
-			kc.like(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],likeType=1003)
-			print "Like"
-          except:
-            pass
-        else:
-            print "Already Liked"
-     time.sleep(200)
-thread2 = threading.Thread(target=autolike)
-thread2.daemon = True
-thread2.start()
+#def autolike():
+#     for zx in range(0,20):
+#        hasil = cl.activity(limit=200)
+ #       if hasil['result']['posts'][zx]['postInfo']['liked'] == False:
+ #         try:    
+#			cl.like(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],likeType=1003)
+#			cl.comment(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],"Auto Like by\nline.me/ti/p/~ardfajrin")
+#			ki.like(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],likeType=1003)
+#			kk.like(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],likeType=1003)
+#			kc.like(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],likeType=1003)
+#			print "Like"
+#          except:
+#            pass
+#        else:
+#            print "Already Liked"
+#     time.sleep(200)
+#thread2 = threading.Thread(target=autolike)
+#thread2.daemon = True
+#thread2.start()
 
 while True:
     try:
